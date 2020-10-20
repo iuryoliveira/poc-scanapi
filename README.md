@@ -3,7 +3,7 @@
 Requirements:
 
 ```shell
-$ git clone git@github.com:scanapi/examples.git
+$ git clone https://github.com/iuryoliveira/poc-scanapi.git
 $ cd poc-scanapi
 $ source .env
 $ scanapi run onboarding.yaml
