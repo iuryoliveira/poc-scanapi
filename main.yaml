@@ -1,0 +1,9 @@
+endpoints:
+  - name: Bmg API tests
+    endpoints:
+      - name: Onboarding
+        endpoints:
+          !include onboarding/index.yaml
+      - name: Conta corrente
+        endpoints:
+          !include contaCorrente/index.yaml

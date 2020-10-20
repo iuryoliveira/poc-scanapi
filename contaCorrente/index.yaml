@@ -1,0 +1,6 @@
+- name: Conta corrente
+  endpoints:
+    - name: Cliente deve conseguir autenticar
+      path: ${BASE_URL}
+      endpoints:
+        !include cenarios/autenticarComSucesso.yaml

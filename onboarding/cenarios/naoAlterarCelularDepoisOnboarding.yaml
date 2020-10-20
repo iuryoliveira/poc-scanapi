@@ -1,0 +1,27 @@
+- name: alterar-celular      
+  requests:
+    - name: solicitar
+      method: post
+      path: /api/v1/cadastro/solicitar
+      tests:
+        - name: status_code_is_200
+          assert: ${{ response.status_code == 200 }}
+        - name: possivelAlterarTelefone_false
+          assert: ${{ response.json().get("possivelAlterarTelefone") is False }}
+      body:
+        cpf: ${CPF}
+        nome: Tarik Silva
+        celular: ${CELULAR}
+        dataNascimento: 08/05/1997
+        origem: APPDIGITAL
+        email: iury@rarolabs.com.br
+        canalToken: SMS
+    - name: validar
+      method: post
+      path: /api/v1/cadastro/validar
+      tests:
+        - name: status_code_is_200
+          assert: ${{ response.status_code == 200 }}
+      body:
+        cpf: ${CPF}
+        token: ${TOKEN}         

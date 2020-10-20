@@ -1,0 +1,9 @@
+- name: Onboarding API tests
+  endpoints:
+    - name: Cliente não pode alterar celular depois de já ter acessado o onboarding
+      path: ${BASE_URL}
+      endpoints:
+        !include cenarios/naoAlterarCelularDepoisOnboarding.yaml
+    - name: Cliente pode alterar celular antes de ter acessado o onboarding
+      endpoints:
+        !include cenarios/alterarCelularAntesOnboarding.yaml

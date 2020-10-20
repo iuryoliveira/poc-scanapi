@@ -1,0 +1,8 @@
+- name: gerador-cpf
+  method: get
+  vars:
+    cpf_aleatorio: ${{ response.json().get("data").get("number") }}
+  path: http://geradorapp.com/api/v1/cpf/generate?token=41afa3b94766614d89e52bbff5478a12
+  tests:
+    - name: status_code_is_200
+      assert: ${{ response.status_code == 200 }}

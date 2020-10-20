@@ -1,0 +1,15 @@
+- name: autenticar-sucesso
+  endpoints: 
+    - name: autenticar
+      requests: 
+      - name: autenticar
+        method: post
+        tests:
+          - name: status_code_is_200
+            assert: ${{ response.status_code == 200 }}
+          - name: tokenType_Bearer
+            assert: ${{ response.json().get("token_type") == "Bearer" }}
+        path: api/v1/autenticacao/
+        headers: 
+          Content-Type: application/x-www-form-urlencoded
+        body: "client_id=l72d2f5e375dfe48fbb5c5e10f4b6bec7e&client_secret=f67c3ec508064d1f979cf514f092e91b&grant_type=password&password=32DA2A0CFA5DF6E90C037DAE68C64F3595E4139BD25363919F8C5C62F1060914470AE0A62925144FF09080B502C93552FD98185C38FE6A7F57AF66B72AF4544CD209D1524806C86B37ADA59FBAC2D0B802FA73A6C861ED3594A1AD9870534ED2F039AB05731F9EA356967AE67D1284BDFA847F64410003CE0313E72CBCA64CFD942E707CB9C68A9C0B2FB799E132039A77D0BE042736C649DCF39FB26DDCA8AE74ECB7497FCE9B59C5DBA50E26019901F7AE4379DBDAFB24436C016EF4788693980C1E802040EAD6B67E98DDA16A531DE7976C401B2A41B634B4C79D0ED6010B7699E5652A000C42ADB9FE96723728BFA148C13B4C2B55F8FBA6D0FC93C5A236&username=38915721586"

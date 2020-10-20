@@ -1,0 +1,13 @@
+- name: solicitar
+  method: post
+  vars:
+    possivelAlterarTelefone: true
+  path: https://apisandbox.bancobmg.com.br:8443/api/v1/cadastro/solicitar
+  body:
+    cpf: ${cpf_aleatorio}
+    nome: Tarik Silva
+    celular: ${CELULAR}
+    dataNascimento: 08/05/1997
+    origem: APPDIGITAL
+    email: iury@rarolabs.com.br
+    canalToken: SMS
